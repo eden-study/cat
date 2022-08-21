@@ -59,17 +59,17 @@
 						</small>
 					<button class="btn btn-success btn-sm" id="nav_application" >
 						<i class="ace-icon fa fa-signal"></i>Application
-					</button><!-- 
+					</button>
 					<button class="btn btn-grey btn-sm" id="nav_mobile">
 						<i class="menu-icon glyphicon glyphicon-phone"></i>Mobile
-					</button> -->
+					</button>
 					<!-- #section:basics/sidebar.layout.shortcuts -->
-					<!-- <button class="btn btn-warning btn-sm" id="nav_browser">
+					<button class="btn btn-warning btn-sm" id="nav_browser">
 						<i class="ace-icon fa fa-users"></i>Browser
-					</button> -->
-					<!-- <button class="btn btn-purple btn-sm" id="nav_server">
+					</button>
+					 <button class="btn btn-purple btn-sm" id="nav_server">
 						<i class="ace-icon fa fa-cogs"></i>Servers
-					</button> -->
+					</button>
 					<button class="btn btn-inverse btn-sm" id="nav_config">
 						<i class="ace-icon fa fa-cogs"></i>Configs
 					</button>
@@ -94,12 +94,12 @@
 							</span>
 <!-- 							<i class="ace-icon fa fa-caret-down"></i>
  -->						</a>
-						<%-- <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+						 <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
 							<li>
 								<a href="/cat/s/login?op=logout" ><i class="ace-icon fa fa-power-off"></i>
 								注销</a>
 							</li>
-						</ul> --%>
+						</ul>
 					</li>
 				</ul>
 				</div> 
@@ -238,8 +238,8 @@
 				var loginInfo=document.getElementById('loginInfo');
 				loginInfo.innerHTML ='欢迎，'+name;
 			} else{
-				//var loginInfo=document.getElementById('loginInfo');
-				//loginInfo.innerHTML ='<a href="/cat/s/login" data-toggle="modal">登录</a>';
+				var loginInfo=document.getElementById('loginInfo');
+				loginInfo.innerHTML ='<a href="/cat/s/login" data-toggle="modal">登录</a>';
 			}
 			
 			if("${model.moduleUri}" != "/cat/s") {
