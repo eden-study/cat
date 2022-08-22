@@ -8,7 +8,7 @@ package com.dianping.cat.report.page.tracing;
  */
 public enum JspFile {
 
-    LOGVIEW("/jsp/report/traces/traces.jsp");
+    LOGVIEW("/jsp/report/tracing/tracing.jsp");
 
     private String path;
 

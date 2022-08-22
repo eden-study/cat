@@ -29,6 +29,12 @@
       <dependency>
          <groupId>org.unidal.framework</groupId>
          <artifactId>web-framework</artifactId>
+         <exclusions>
+            <exclusion>
+               <artifactId>commons-io</artifactId>
+               <groupId>commons-io</groupId>
+            </exclusion>
+         </exclusions>
       </dependency>
       <dependency>
          <groupId>javax.servlet</groupId>
@@ -70,6 +76,12 @@
          <groupId>mysql</groupId>
          <artifactId>mysql-connector-java</artifactId>
          <scope>runtime</scope>
+         <exclusions>
+            <exclusion>
+               <artifactId>protobuf-java</artifactId>
+               <groupId>com.google.protobuf</groupId>
+            </exclusion>
+         </exclusions>
       </dependency>
       <dependency>
          <groupId>junit</groupId>
@@ -90,6 +102,12 @@
          <groupId>org.apache.commons</groupId>
          <artifactId>commons-email</artifactId>
          <version>1.1</version>
+         <exclusions>
+            <exclusion>
+               <artifactId>mail</artifactId>
+               <groupId>javax.mail</groupId>
+            </exclusion>
+         </exclusions>
       </dependency>
       <dependency>
          <groupId>javax.mail</groupId>
@@ -110,6 +128,12 @@
          <groupId>com.onelogin</groupId>
          <artifactId>java-saml</artifactId>
          <version>2.2.0</version>
+         <exclusions>
+            <exclusion>
+               <artifactId>slf4j-api</artifactId>
+               <groupId>org.slf4j</groupId>
+            </exclusion>
+         </exclusions>
       </dependency>
 	
       <dependency>
@@ -123,6 +147,16 @@
          <artifactId>powermock-api-mockito</artifactId>
          <version>1.6.5</version>
          <scope>test</scope>
+         <exclusions>
+            <exclusion>
+               <artifactId>hamcrest-core</artifactId>
+               <groupId>org.hamcrest</groupId>
+            </exclusion>
+            <exclusion>
+               <artifactId>objenesis</artifactId>
+               <groupId>org.objenesis</groupId>
+            </exclusion>
+         </exclusions>
       </dependency>
       <dependency>
          <groupId>org.powermock</groupId>
