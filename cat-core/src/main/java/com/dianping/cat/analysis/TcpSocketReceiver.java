@@ -18,35 +18,28 @@
  */
 package com.dianping.cat.analysis;
 
-import java.util.List;
-
-import org.codehaus.plexus.logging.LogEnabled;
-import org.codehaus.plexus.logging.Logger;
-import org.unidal.lookup.annotation.Inject;
-import org.unidal.lookup.annotation.Named;
-
 import com.dianping.cat.CatConstants;
 import com.dianping.cat.config.server.ServerConfigManager;
 import com.dianping.cat.message.CodecHandler;
 import com.dianping.cat.message.spi.BufReleaseHelper;
 import com.dianping.cat.message.spi.DefaultMessageTree;
 import com.dianping.cat.statistic.ServerStatisticManager;
-
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.PooledByteBufAllocator;
-import io.netty.channel.ChannelFuture;
-import io.netty.channel.ChannelHandlerContext;
-import io.netty.channel.ChannelInitializer;
-import io.netty.channel.ChannelOption;
-import io.netty.channel.ChannelPipeline;
-import io.netty.channel.EventLoopGroup;
+import io.netty.channel.*;
 import io.netty.channel.epoll.EpollEventLoopGroup;
 import io.netty.channel.epoll.EpollServerSocketChannel;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.handler.codec.ByteToMessageDecoder;
+import org.codehaus.plexus.logging.LogEnabled;
+import org.codehaus.plexus.logging.Logger;
+import org.unidal.lookup.annotation.Inject;
+import org.unidal.lookup.annotation.Named;
+
+import java.util.List;
 
 @Named(type = TcpSocketReceiver.class)
 public final class TcpSocketReceiver implements LogEnabled {
@@ -178,7 +171,13 @@ public final class TcpSocketReceiver implements LogEnabled {
 					buffer.readBytes(length);
 					BufReleaseHelper.release(buffer);
 				}
-			} catch (Exception e) {
+			}
+			catch (IndexOutOfBoundsException e) {
+				// Fixed me: map be cat bug
+				// java.lang.IndexOutOfBoundsException: readerIndex(92) + length(245366783) exceeds writerIndex(1856): PooledUnsafeDirectByteBuf(ridx: 92, widx: 1856, cap: 1856)
+				m_serverStateManager.addMessageTotalLoss(1);
+			}
+			catch (Exception e) {
 				m_serverStateManager.addMessageTotalLoss(1);
 				m_logger.error(e.getMessage(), e);
 			}
