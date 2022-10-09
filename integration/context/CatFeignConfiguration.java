@@ -21,7 +21,7 @@ public class CatFeignConfiguration implements RequestInterceptor {
     public void apply(RequestTemplate requestTemplate) {
 
         com.dianping.cat.context.CatContextImpl catContext = new CatContextImpl();
-        Cat.logRemoteCallClient(catContext,Cat.getManager().getDomain());
+        Cat.logRemoteCallClient(catContext, Cat.getManager().getDomain());
         requestTemplate.header(CatConstantsExt.CAT_HTTP_HEADER_ROOT_MESSAGE_ID,catContext.getProperty(Cat.Context.ROOT));
         requestTemplate.header(CatConstantsExt.CAT_HTTP_HEADER_PARENT_MESSAGE_ID,catContext.getProperty(Cat.Context.PARENT));
         requestTemplate.header(CatConstantsExt.CAT_HTTP_HEADER_CHILD_MESSAGE_ID,catContext.getProperty(Cat.Context.CHILD));
