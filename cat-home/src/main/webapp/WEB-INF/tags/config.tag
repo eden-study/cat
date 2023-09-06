@@ -17,7 +17,7 @@
 					try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
 				</script>
 				<ul class="nav  nav-list" style="top: 0px;">
-					<li id="projects_config" class="hsub">
+					<li id="domain-config" class="hsub">
 					<a href="/cat/s/config?op=projects" class="dropdown-toggle"> <i class="menu-icon glyphicon glyphicon-home"></i> <span class="menu-text">项目配置</span>
 							<b class="arrow fa fa-angle-down"></b>
 					</a> <b class="arrow"></b>
@@ -30,7 +30,7 @@
 								<b class="arrow"></b></li>
 						</ul>
 					</li>
-					<li id="overall_config" class="hsub">
+					<li id="system-config" class="hsub">
 						<a href="/cat/s/config?op=networkRuleConfigList" class="dropdown-toggle"> <i class="menu-icon glyphicon glyphicon-cog"></i> <span class="menu-text">系统配置</span>
 							<b class="arrow fa fa-angle-down"></b>
 						</a> <b class="arrow"></b>
@@ -67,7 +67,7 @@
 								<b class="arrow"></b></li>
 						</ul>
 					</li>
-					<li id="application_config" class="hsub">
+					<li id="server-config" class="hsub">
 					<a href="/cat/s/config?op=metricConfigList" class="dropdown-toggle"> <i class="menu-icon glyphicon glyphicon-cloud" style="top:3px"></i> <span class="menu-text">Server</span>
 						<b class="arrow fa fa-angle-down"></b>
 					</a> <b class="arrow"></b>
@@ -122,7 +122,7 @@
 								<b class="arrow"></b></li>
 						</ul>
 					</li>
-					<li id="Web_config" class="hsub"><a href="#" class="dropdown-toggle"> <i class="menu-icon glyphicon glyphicon-globe"></i> <span class="menu-text">Browser</span>
+					<li id="browser-config" class="hsub"><a href="#" class="dropdown-toggle"> <i class="menu-icon glyphicon glyphicon-globe"></i> <span class="menu-text">Browser</span>
 						<b class="arrow fa fa-angle-down"></b>
 					</a> <b class="arrow"></b>
 						<ul class="submenu">

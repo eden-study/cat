@@ -13,7 +13,7 @@
 	<res:useJs value="${res.js.local['alarm_js']}" target="head-js" />
 	<script type="text/javascript">
 		$(document).ready(function() {
-			$('#Web_config').addClass('active open');
+			$('#browser-config').addClass('active open');
 			$('#speed').addClass('active');
 		});
 	</script>
@@ -98,7 +98,7 @@
 							<tr><td>19</td><td><input type="text" class="input-xlarge" name="step.step19" value="${model.step.step19}"/>
 							</c:otherwise>
 							</c:choose>
-							
+
 						</table>
 					</td>
 				</tr>

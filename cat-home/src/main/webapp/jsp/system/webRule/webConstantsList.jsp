@@ -12,7 +12,7 @@
 <a:web_body>
 	<script type="text/javascript">
 		$(document).ready(function() {
-			$('#Web_config').addClass('active open');
+			$('#browser-config').addClass('active open');
 			$('#webConstants').addClass('active');
 			$("#tab-constant-网络类型").addClass('active');
 			$("#tabContent-constant-网络类型").addClass('active');

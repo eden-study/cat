@@ -37,11 +37,11 @@
 						<td style='text-align:center' colspan='3'><input class='btn btn-primary btn-sm' type="submit" name="submit" value="提交" /></td>
 					</tr>
 				</table>
-			</form> 
+			</form>
 </a:web_body>
 <script type="text/javascript">
 	$(document).ready(function() {
-		$('#Web_config').addClass('active open');
+		$('#browser-config').addClass('active open');
 		$('#urlPatterns').addClass('active');
 	});
 </script>

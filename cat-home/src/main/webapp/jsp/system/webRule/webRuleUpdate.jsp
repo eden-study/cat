@@ -17,7 +17,7 @@
 				<th align=left>
 				<c:set var="strs" value="${fn:split(payload.ruleId, ':')}" />
 				<c:set var="name" value="${strs[2]}" />
-				告警名<input id="name" value="${name}"/> URL 
+				告警名<input id="name" value="${name}"/> URL
 					<select style="width: 600px;" name="url" id="url">
 						<c:forEach var="item" items="${model.patternItems}" varStatus="status">
 							<option value='${item.value.id}'>${item.value.name}|${item.value.pattern}</option>
@@ -30,7 +30,7 @@
 							</c:forEach>
 						</select>
 				</th></tr>
-				<tr><th>地区 
+				<tr><th>地区
 					<select style="width: 100px;" name="city" id="city">
 						<option value="-1">ALL</option>
 						<c:forEach var="item" items="${model.webCities}" varStatus="status">
@@ -107,7 +107,7 @@ function update() {
 			$("#network").val(network);
 			$("#metric").val(metric);
 		}
-		$('#Web_config').addClass('active open');
+		$('#browser-config').addClass('active open');
 		$('#webRule').addClass('active');
 		initRuleConfigs(["DescVal","DescPer","AscVal","AscPer"]);
 		$(document).delegate("#ruleSubmitButton","click",function(){

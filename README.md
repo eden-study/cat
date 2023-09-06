@@ -105,7 +105,7 @@ public Response listAsset(Cust cust) {
 3. 在上述目标数据源执行 `scripts/cat-init-3.3.0.sql` 初始化 
 4. 检查 `cat-home` 模块已正确设置了 Facet
    ![](https://cdn.jsdelivr.net/gh/shiyindaxiaojie/images/cat/idea-cat-home-facet.png)
-5. 使用 IDEA 配置 Tomcat 服务器
+5. 使用 IDEA 配置 Tomcat 服务器，请注意，多网卡情况下可能会出现 `CAT服务端异常:[127.0.0.1]`，请设置 JVM 启动参数 `host.ip` 指定 IP。
    ![](https://cdn.jsdelivr.net/gh/shiyindaxiaojie/images/cat/idea-tomcat-settings.png)
 6. 指定访问入口 Context 为 `/cat`
    ![](https://cdn.jsdelivr.net/gh/shiyindaxiaojie/images/cat/idea-tomcat-deployment.png)

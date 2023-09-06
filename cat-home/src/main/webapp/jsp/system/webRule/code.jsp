@@ -12,7 +12,7 @@
 <a:web_body>
 	<script type="text/javascript">
 		$(document).ready(function() {
-			$('#Web_config').addClass('active open');
+			$('#browser-config').addClass('active open');
 			$('#code').addClass('active');
  		});
 	</script>

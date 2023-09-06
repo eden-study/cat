@@ -19,7 +19,7 @@
 						<div id="editor" class="editor">${model.content}</div>
 					</td></tr>
 					<tr>
-						<td style="text-align:center"><input class='btn btn-primary' 
+						<td style="text-align:center"><input class='btn btn-primary'
 							type="submit" name="submit" value="提交" /></td>
 					</tr>
 				</table>
@@ -28,7 +28,7 @@
 </a:web_body>
 <script type="text/javascript">
 		$(document).ready(function() {
-			$('#Web_config').addClass('active open');
+			$('#browser-config').addClass('active open');
 			$('#webConstants').addClass('active');
 			var state = '${model.opState}';
 			if(state=='Success'){

@@ -39,7 +39,7 @@
 						<c:forEach var="level" items="${model.levels}">
 							<option value="${level}">${level}</option>
 						</c:forEach>
-						</select>				
+						</select>
 					</c:when>
 					<c:otherwise>
 		            	<input type="text" class="input-xlarge"  name="jsRule.level" value="${model.jsRule.level}" readonly/>
@@ -55,18 +55,18 @@
 					<td>联系邮件</td>
 					<td><input type="text" class="input-xlarge"  placeholder="联系邮件" name="jsRule.mails" required value="${model.jsRule.mails}"/>（多个以逗号隔开）</td>
 				</tr>
-				
+
 				<tr>
 					<td style='text-align:center' colspan='2'><input class='btn btn-primary btn-sm' type="submit" name="submit" value="提交" /></td>
 				</tr>
 			</table>
 		</form>
-		
+
 <script type="text/javascript">
 	$(document).ready(function() {
-		$('#Web_config').addClass('active open');
+		$('#browser-config').addClass('active open');
 		$('#jsRule').addClass('active');
-		 
+
 		//custom autocomplete (category selection)
 		$.widget( "custom.catcomplete", $.ui.autocomplete, {
 			_renderMenu: function( ul, items ) {
@@ -81,7 +81,7 @@
 				});
 			}
 		});
-		
+
 		var data = [];
 		<c:forEach var="module" items="${model.modules}">
 			var item = {};
@@ -89,12 +89,12 @@
 			item['category'] ="modules";
 			data.push(item);
 		</c:forEach>
-		
+
 		$("#module").catcomplete({
 			delay: 0,
 			source: data
 		});
-		
+
 	});
-</script> 
+</script>
 </a:web_body>
