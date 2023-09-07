@@ -9,7 +9,7 @@
 <jsp:useBean id="payload" type="com.dianping.cat.system.page.web.Payload" scope="request"/>
 <jsp:useBean id="model" type="com.dianping.cat.system.page.web.Model" scope="request"/>
 
-<a:web_body>
+<a:config>
 		<h3 class="text-center text-success">编辑JS告警规则</h3>
 		<form name="jsRuleUpdate" id="form" method="post" action="${model.pageUri}?op=jsRuleUpdateSubmit">
 			<table style='width:100%' class='table table-striped table-condensed '>
@@ -97,4 +97,4 @@
 
 	});
 </script>
-</a:web_body>
+</a:config>

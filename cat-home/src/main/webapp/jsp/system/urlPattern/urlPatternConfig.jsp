@@ -6,11 +6,11 @@
 <jsp:useBean id="ctx" type="com.dianping.cat.system.page.web.Context" scope="request"/>
 <jsp:useBean id="payload" type="com.dianping.cat.system.page.web.Payload" scope="request"/>
 <jsp:useBean id="model" type="com.dianping.cat.system.page.web.Model" scope="request"/>
-<a:web_body>
+<a:config>
 	<res:useJs value="${res.js.local['jquery.validate.min.js']}" target="head-js" />
 	<res:useJs value="${res.js.local['editor.js']}" target="head-js" />
 	<script src='${model.webapp}/assets/js/editor/ace.js'></script>
-			<h4 class="text-center text-danger">Web Url Pattern设置</h4>
+<%--			<h4 class="text-center text-danger">Web Url Pattern设置</h4>--%>
 			<form name="blackConfigUpdate" id="form" method="post"
 				action="${model.pageUri}?op=urlPatternConfigUpdate">
 				<table class="table table-striped table-condensed   table-hover">
@@ -25,7 +25,7 @@
 				</table>
 			</form>
 			<h4 class="text-center text-danger" id="state">&nbsp;</h4>
-</a:web_body>
+</a:config>
 <script type="text/javascript">
 		$(document).ready(function() {
 			$('#browser-config').addClass('active open');
