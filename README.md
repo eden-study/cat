@@ -27,7 +27,13 @@ CAT 是美团点评开源的实时应用监控平台，提供了 `Tracsaction`�
 
 ![](https://cdn.jsdelivr.net/gh/shiyindaxiaojie/images/cat/dashboard.png)
 
-![](https://cdn.jsdelivr.net/gh/shiyindaxiaojie/images/cat/dashboard-app.png)
+![](https://cdn.jsdelivr.net/gh/shiyindaxiaojie/images/cat/app-dashboard.png)
+
+![](https://cdn.jsdelivr.net/gh/shiyindaxiaojie/images/cat/database-dashboard.png)
+
+![](https://cdn.jsdelivr.net/gh/shiyindaxiaojie/images/cat/cache-dashboard.png)
+
+![](https://cdn.jsdelivr.net/gh/shiyindaxiaojie/images/cat/rpc-dashboard.png)
 
 #### Tracing
 
@@ -74,7 +80,7 @@ public Response listAsset(Cust cust) {
 
 可以搜索某个 RPC 接口被调用的情况
 
-![](https://cdn.jsdelivr.net/gh/shiyindaxiaojie/images/cat/cross.png)
+![](https://cdn.jsdelivr.net/gh/shiyindaxiaojie/images/cat/rpc.png)
 
 #### Heart Beat
 
@@ -82,9 +88,15 @@ public Response listAsset(Cust cust) {
 
 #### Dependency
 
-相对 Zipkin 较为简陋，后续有空可以优化下
-
 ![](https://cdn.jsdelivr.net/gh/shiyindaxiaojie/images/cat/dependency.png)
+
+#### Browser
+
+![](https://cdn.jsdelivr.net/gh/shiyindaxiaojie/images/cat/browser.png)
+
+#### Mobile
+
+![](https://cdn.jsdelivr.net/gh/shiyindaxiaojie/images/cat/mobile.png)
 
 #### State
 
@@ -116,10 +128,12 @@ public Response listAsset(Cust cust) {
 本项目已发布到 [Docker Hub](https://hub.docker.com/repository/docker/shiyindaxiaojie/cat-home)，请参考以下命令运行。
 
 ```bash
-docker run -e JAVA_OPTS="-Xmx2g -Xms2g -Xmn1g" -e MYSQL_URL="127.0.0.1" -e MYSQL_PORT="3306" -e MYSQL_SCHEMA="cat" -e MYSQL_USERNAME="" -e MYSQL_PASSWD="" -e SERVER_URL="127.0.0.1" -p 8090:8090 --name=cat-home -d shiyindaxiaojie/cat-home
+docker run -e MYSQL_URL="127.0.0.1" -e MYSQL_PORT="3306" -e MYSQL_SCHEMA="cat" -e MYSQL_USERNAME="" -e MYSQL_PASSWD="" -p 8080:8080 --name=cat-home -d shiyindaxiaojie/cat-home
 ```
 
 ## 如何部署
+
+> 注意：除了 Helm 部署，在停止 CAT 进程之前最好调用 `curl http://localhost:8080/cat/r/home?op=checkpoint` ，将内存数据持久化磁盘，避免重启后丢失。 
 
 ### Tomcat 部署
 
