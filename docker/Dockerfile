@@ -1,4 +1,4 @@
-FROM tomcat:8.5.78-jdk8
+FROM tomcat:8.5.100-jdk8
 
 LABEL maintainer="梦想歌 <shiyindaxiaojie@gmail.com>"
 LABEL version="3.4.1"
@@ -6,6 +6,7 @@ LABEL version="3.4.1"
 ENV HOME "/data"
 ENV TZ "Asia/Shanghai"
 ENV LANG "C.UTF-8"
+ENV JAVA_OPTS ""
 ENV XMS "1g"
 ENV XMX "1g"
 ENV XSS "256k"
